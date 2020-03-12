@@ -13,7 +13,7 @@
         
     <groupId>com.adriens.github.opt.tempsattente</groupId>
     <artifactId>tempsattente-api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
     
     <name>opt-temps-attente-agences-api</name>
@@ -23,7 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <opt-temps-attente-agences-sdk.version>1.4</opt-temps-attente-agences-sdk.version>
+        <opt-temps-attente-agences-sdk.version>1.5</opt-temps-attente-agences-sdk.version>
         <logback.version>1.2.3</logback.version>
     </properties>
     
