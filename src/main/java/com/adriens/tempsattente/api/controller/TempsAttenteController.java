@@ -11,6 +11,7 @@ import com.github.adriens.opt.tempsattente.sdk.Agence;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,11 +50,13 @@ public class TempsAttenteController {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ArrayList<Agence> getAgences(@PathVariable String communeName) throws Exception {
         try{
-            return tempsAttenteService.getAgences(communeName);
+            
+            return tempsAttenteService.getAgences(StringUtils.stripAccents(communeName.toLowerCase()));
         }
         catch(Exception ex){
             log.error("Impossible de récupérer les détails des communes");
-            throw ex;
+            return new ArrayList<Agence>();
+            
         }
     }
     
