@@ -19,6 +19,15 @@ mvn spring-boot:run
 /temps-attente/agence/{idAgence}
 ```
 
+# Exemples d'appels
+
+```
+/temps-attente/agences/noumea
+/temps-attente/agences/4314
+```
+
+Aller directement sur le [Marketplace](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc) pour des exemples live.
+
 # Accéder
 
 Cette API est accessible depuis le web et documentée sur [le marketplace RapidAPI](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc).
