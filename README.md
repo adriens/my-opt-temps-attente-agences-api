@@ -27,7 +27,7 @@ Aller directement sur le [Marketplace](https://rapidapi.com/adriens/api/temps-d-
 ## Accéder
 
 Cette API est accessible depuis le web et documentée sur [le marketplace RapidAPI](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc).
-Des exemples de codes fonctionnles y sont fournis pour tous les languages.
+Des exemples de codes fonctionnels y sont fournis pour tous les languages.
 
 ## Ambitions
 
