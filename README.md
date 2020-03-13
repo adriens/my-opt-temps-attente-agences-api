@@ -1,4 +1,5 @@
 # opt-temps-attente-agences-api
+
 API REST des temps d'attente en agence OPT.nc
 
 # Utilisation
@@ -9,7 +10,7 @@ API REST des temps d'attente en agence OPT.nc
 mvn spring-boot:run
 ```
 
-## Endpoint
+## Endpoints
 
 ```
 /communes
@@ -17,4 +18,13 @@ mvn spring-boot:run
 /temps-attente/agences/{communeName}
 /temps-attente/agence/{idAgence}
 ```
+
+# Accéder
+
+Cette API est accessible depuis le web et documentée sur [le marketplace RapidAPI](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc).
+Des exemples de codes fonctionnles y sont fournis pour tous les languages.
+
+# Ambitions
+
+Cette API a pour ambition de booster l'Open Innovationet permettre la réalisation d'untégrations efficaces et originales.
 
