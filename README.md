@@ -26,5 +26,5 @@ Des exemples de codes fonctionnles y sont fournis pour tous les languages.
 
 # Ambitions
 
-Cette API a pour ambition de booster l'Open Innovationet permettre la réalisation d'untégrations efficaces et originales.
+Cette API a pour ambition de booster l'Open Innovation et permettre la réalisation d'intégrations efficaces et originales.
 
