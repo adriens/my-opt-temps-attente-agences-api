@@ -1,8 +1,4 @@
-# opt-temps-attente-agences-api
-
-API REST des temps d'attente en agence OPT.nc
-
-# Utilisation
+# API REST des temps d'attente en agence OPT.nc
 
 ## Démarrer le service
 
@@ -19,7 +15,7 @@ mvn spring-boot:run
 /temps-attente/agence/{idAgence}
 ```
 
-# Exemples d'appels
+## Exemples d'appels
 
 ```
 /temps-attente/agences/noumea
@@ -28,16 +24,16 @@ mvn spring-boot:run
 
 Aller directement sur le [Marketplace](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc) pour des exemples live.
 
-# Accéder
+## Accéder
 
 Cette API est accessible depuis le web et documentée sur [le marketplace RapidAPI](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc).
 Des exemples de codes fonctionnles y sont fournis pour tous les languages.
 
-# Ambitions
+## Ambitions
 
 Cette API a pour ambition de booster l'Open Innovation et permettre la réalisation d'intégrations efficaces et originales.
 
-# Exemples de réalisations
+## Exemples de réalisations
 
 - **Modèle prédictif**: [support de présentation](https://slides.com/monimpaul/deck-4c5e0d#/)
 - **Appli mobile Flutter**: video de démo d'un [prototype opérationnel](https://youtu.be/FJzCIQDsMtc)
