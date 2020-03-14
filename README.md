@@ -19,7 +19,7 @@ mvn spring-boot:run
 
 ```
 /temps-attente/agences/noumea
-/temps-attente/agences/4314
+/temps-attente/agence/4314
 ```
 
 Aller directement sur le [Marketplace](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc) pour des exemples live.
