@@ -37,7 +37,7 @@ public class TempsAttenteController {
     @GetMapping("/")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public RedirectView redirect() {
-        RedirectView redirectView = new RedirectView("https://github.com/adriens/opt-temps-attente-agences-api/blob/master/README.md");
+        RedirectView redirectView = new RedirectView("https://github.com/adriens/opt-temps-attente-agences-api");
         return redirectView;
     }
     
