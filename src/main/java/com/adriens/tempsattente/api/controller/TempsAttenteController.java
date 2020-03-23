@@ -43,10 +43,10 @@ public class TempsAttenteController {
     
     @GetMapping("/temps-attente/agences")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public ArrayList<Agence> getAgences() throws Exception {
+    public ArrayList<Agence> getAgences() throws IOException {
         try {
             return tempsAttenteService.getAgences();
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             log.error("Impossible de récupérer les détails des agences");
             throw ex;
         }
@@ -54,7 +54,7 @@ public class TempsAttenteController {
 
     @GetMapping("/temps-attente/agences/{communeName}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public ArrayList<Agence> getAgences(@PathVariable String communeName) throws Exception {
+    public ArrayList<Agence> getAgences(@PathVariable String communeName) throws IOException {
         if(tempsAttenteService.getAgences(communeName).isEmpty()) {
             throw new CommuneNotFoundException("la commune <" +communeName+ "> n'existe pas.\n");
         } else { 
@@ -64,7 +64,7 @@ public class TempsAttenteController {
 
     @GetMapping("/communes")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public ArrayList<String> getCommunesNames() throws Exception {
+    public ArrayList<String> getCommunesNames() {
         try {
             return tempsAttenteService.getCommunesNames();
         } catch (Exception ex) {
@@ -75,7 +75,7 @@ public class TempsAttenteController {
 
     @GetMapping("/temps-attente/agence/{idAgence}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public Agence getAgence(@PathVariable int idAgence) throws Exception {
+    public Agence getAgence(@PathVariable int idAgence) throws IOException {
         if(tempsAttenteService.getAgence(idAgence) == null) {
             throw new AgenceNotFoundException("l'ID d'agence <" +idAgence+ "> n'existe pas.\n");
         } else { 
