@@ -31,8 +31,8 @@ public class TempsAttenteService {
         return Agences.getCommunesNames();
     }
    
-    public Agence getAgence(String idAgence) throws IOException {
-        return Agence.getAgence(idAgence);
+    public Agence getAgence(int idAgence) throws IOException {
+           return Agence.getAgence(idAgence);
     }
     
     public ArrayList<Agence> getAgences(String communeName) throws IOException {
