@@ -6,6 +6,7 @@
 package com.adriens.tempsattente.api.controller;
 
 import com.adriens.tempsattente.api.service.TempsAttenteService;
+import com.adriens.tempsattente.exception.AgenceNotFoundException;
 
 import com.github.adriens.opt.tempsattente.sdk.Agence;
 
@@ -22,32 +23,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-
 /**
  *
  * @author meilie
  */
-
 @RestController
 public class TempsAttenteController {
-    
+
     @Autowired
     private TempsAttenteService tempsAttenteService;
-    
+
     private final Logger log = LoggerFactory.getLogger(TempsAttenteController.class);
     
     @GetMapping("/temps-attente/agences")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ArrayList<Agence> getAgences() throws Exception {
-        try{
+        try {
             return tempsAttenteService.getAgences();
-        }
-        catch(IOException ex){
+        } catch (IOException ex) {
             log.error("Impossible de récupérer les détails des agences");
             throw ex;
         }
     }
-    
+
     @GetMapping("/temps-attente/agences/{communeName}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ArrayList<Agence> getAgences(@PathVariable String communeName) throws Exception {
@@ -61,29 +59,26 @@ public class TempsAttenteController {
             
         }
     }
-    
+
     @GetMapping("/communes")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ArrayList<String> getCommunesNames() throws Exception {
-        try{
+        try {
             return tempsAttenteService.getCommunesNames();
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             log.error("Impossible de récupérer les détails des communes");
             throw ex;
         }
     }
-    
+
     @GetMapping("/temps-attente/agence/{idAgence}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public Agence getAgence(@PathVariable String idAgence) throws Exception {
-        try{
+    public Agence getAgence(@PathVariable int idAgence) throws Exception {
+        if(tempsAttenteService.getAgence(idAgence) == null) {
+            throw new AgenceNotFoundException("l'ID d'agence : " +idAgence+ " n'existe pas.\n");
+        } else { 
             return tempsAttenteService.getAgence(idAgence);
         }
-        catch(Exception ex){
-            log.error("Impossible de récupérer le détail de l'agence");
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucune agence ne correspond à l'ID "+idAgence);
-        }
     }
-    
+
 }
