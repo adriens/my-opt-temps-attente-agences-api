@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.view.RedirectView;
 
 /**
  *
@@ -34,6 +35,13 @@ public class TempsAttenteController {
     private TempsAttenteService tempsAttenteService;
 
     private final Logger log = LoggerFactory.getLogger(TempsAttenteController.class);
+    
+    @GetMapping("/")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public RedirectView redirect() {
+        RedirectView redirectView = new RedirectView("https://github.com/adriens/opt-temps-attente-agences-api/blob/master/README.md");
+        return redirectView;
+    }
     
     @GetMapping("/temps-attente/agences")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
