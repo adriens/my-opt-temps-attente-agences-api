@@ -13,7 +13,7 @@
         
     <groupId>com.adriens.github.opt.tempsattente</groupId>
     <artifactId>tempsattente-api</artifactId>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.4</version>
     <packaging>jar</packaging>
     
     <name>opt-temps-attente-agences-api</name>
