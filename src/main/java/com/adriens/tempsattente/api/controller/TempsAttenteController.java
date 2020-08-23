@@ -12,6 +12,9 @@ import com.adriens.tempsattente.exception.CommuneNotFoundException;
 import com.github.adriens.opt.tempsattente.sdk.Agence;
 
 import java.io.IOException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,6 +84,14 @@ public class TempsAttenteController {
         } else { 
             return tempsAttenteService.getAgence(idAgence);
         }
+    }
+
+    @GetMapping("/csv")
+    public void downloadCsv(HttpServletResponse response) throws IOException {
+        String timestamp = new SimpleDateFormat("ddMMyyyyhhmmss").format(new Date());
+        response.setContentType("text/csv;charset=UTF-8");
+        response.setHeader("Content-Disposition", "attachment; filename=tempsattente-" + timestamp + ".csv");
+        tempsAttenteService.downloadCsv(response.getWriter());
     }
 
 }
