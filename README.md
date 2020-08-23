@@ -9,6 +9,7 @@ mvn spring-boot:run
 ## Endpoints
 
 ```
+/csv
 /communes
 /temps-attente/agences
 /temps-attente/agences/{communeName}
@@ -18,6 +19,9 @@ mvn spring-boot:run
 ## Exemples d'appels
 
 ```
+/csv
+/communes
+/temps-attente/agences
 /temps-attente/agences/noumea
 /temps-attente/agence/4314
 ```
