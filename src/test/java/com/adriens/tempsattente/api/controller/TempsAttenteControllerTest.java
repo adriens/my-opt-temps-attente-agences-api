@@ -67,7 +67,7 @@ public class TempsAttenteControllerTest {
         
         ArrayList<Agence> listeAgence = mapper.readValue(result.getResponse().getContentAsString(), new TypeReference<ArrayList<Agence>>(){});
         
-        assertEquals(65, listeAgence.size());
+        assertEquals(63, listeAgence.size());
     }
     
     @Test
@@ -75,7 +75,7 @@ public class TempsAttenteControllerTest {
         System.out.println("getAgencesGoodCommuneName");
         
         MvcResult result = (MvcResult) mvc.perform( MockMvcRequestBuilders
-        .get("/temps-attente/agences/{communeName}","noumea")
+        .get("/temps-attente/agences/{communeName}","moindou")
         .accept(MediaType.APPLICATION_JSON))
         .andDo(print())
         .andExpect(status().isOk())
@@ -83,7 +83,7 @@ public class TempsAttenteControllerTest {
         
         ArrayList<Agence> listeAgence = mapper.readValue(result.getResponse().getContentAsString(), new TypeReference<ArrayList<Agence>>(){});
         
-        assertEquals(17, listeAgence.size());
+        assertEquals(1,listeAgence.size());
     }
     
     @Test
@@ -91,7 +91,7 @@ public class TempsAttenteControllerTest {
         System.out.println("getAgencesBadCommuneName");
         
         MvcResult result = (MvcResult) mvc.perform( MockMvcRequestBuilders
-        .get("/temps-attente/agences/{communeName}","noum")
+        .get("/temps-attente/agences/{communeName}","toto")
         .accept(MediaType.APPLICATION_JSON))
         .andDo(print())
         .andExpect(status().isNotFound())
@@ -113,7 +113,7 @@ public class TempsAttenteControllerTest {
         
         ArrayList<String> listeCommunes = mapper.readValue(result.getResponse().getContentAsString(), new TypeReference<ArrayList<String>>(){});
         
-        assertEquals(33, listeCommunes.size());
+        assertTrue(listeCommunes.size() > 30);
     }
 
     @Test
@@ -128,9 +128,9 @@ public class TempsAttenteControllerTest {
         .andReturn();
         
         Agence agence = mapper.readValue(result.getResponse().getContentAsString(), Agence.class);
-        String strAgence = "Agence 4306 <designation: Agence de LA FOA, realMaxWaitingTimeMs: 0, coordonneeX: 382333.56809999794, coordonneeY: 276615.18469999917, coordonneeXPrecise: 382334, coordonneeYPrecise: 276617>";
+        String strAgence = "Agence de LA FOA";
         
-        assertEquals(strAgence, agence.toString());
+        assertEquals(strAgence, agence.getDesignation());
     }
     
     @Test
@@ -159,5 +159,19 @@ public class TempsAttenteControllerTest {
         .andReturn();
         
         assertTrue(result.getResponse().getContentAsString().isEmpty());
+    }
+    
+    @Test
+    public void testGetCsv() throws Exception {
+        System.out.println("getCsv");
+        
+        MvcResult result = (MvcResult) mvc.perform( MockMvcRequestBuilders
+        .get("/csv")
+        .accept(MediaType.APPLICATION_JSON))
+        .andDo(print())
+        .andExpect(status().isOk())
+        .andReturn();
+        
+        assertTrue(result.getResponse().getContentType().equalsIgnoreCase("text/csv;charset=UTF-8"));
     }
 }
