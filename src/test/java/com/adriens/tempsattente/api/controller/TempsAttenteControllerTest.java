@@ -51,7 +51,7 @@ public class TempsAttenteControllerTest {
         .andExpect(status().isFound())
         .andReturn();
         
-        assertEquals("https://github.com/adriens/opt-temps-attente-agences-api", result.getResponse().getRedirectedUrl());
+        assertEquals("/doc.tempsattente.html", result.getResponse().getRedirectedUrl());
     }
 
     @Test
@@ -113,7 +113,7 @@ public class TempsAttenteControllerTest {
         
         ArrayList<String> listeCommunes = mapper.readValue(result.getResponse().getContentAsString(), new TypeReference<ArrayList<String>>(){});
         
-        assertTrue(listeCommunes.size() > 30);
+        assertEquals(33, listeCommunes.size());
     }
 
     @Test
