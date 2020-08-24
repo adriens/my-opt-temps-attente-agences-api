@@ -9,6 +9,7 @@ mvn spring-boot:run
 ## Endpoints
 
 ```
+/
 /csv
 /communes
 /temps-attente/agences
@@ -18,13 +19,15 @@ mvn spring-boot:run
 
 ## Exemples d'appels
 
-```
-/csv
-/communes
-/temps-attente/agences
-/temps-attente/agences/noumea
-/temps-attente/agence/4314
-```
+
+<pre>
+<code><b>/</b></code> <i>Accès à la documentation Swagger</i>
+<code><b>/csv</b></code> <i>Accès au téléchargement de la liste des agences au format CSV</i>
+<code><b>/communes</b></code> <i>Accès à la liste des communes</i>
+<code><b>/temps-attente/agences</b></code> <i>Accès à la liste des agences</i>
+<code><b>/temps-attente/agences/noumea</b></code> <i>Accès à la liste des agences de Nouméa</i>
+<code><b>/temps-attente/agence/4314</b></code> <i>Accès à l'agence correspondant à l'id 4314</i>
+</pre>
 
 Aller directement sur le [Marketplace](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc) pour des exemples live.
 
