@@ -45,3 +45,25 @@ Cette API a pour ambition de booster l'Open Innovation et permettre la réalisat
 - **Modèle prédictif**: [support de présentation](https://slides.com/monimpaul/deck-4c5e0d#/)
 - **Appli mobile Flutter**: video de démo d'un [prototype opérationnel](https://youtu.be/FJzCIQDsMtc)
 
+
+# jib build
+
+In your `~/.m2/settings.xml` put your Docker hub
+
+```xml
+<server>
+    <id>registry.hub.docker.com</id>
+    <username>rastadidi</username>
+    <password>XXXXXXX</password>
+</server>
+```
+
+Then build/push to DockerHub :
+
+`mvn compile jib:build`
+
+# Docker pull command
+
+```
+docker pull rastadidi/opt-temps-attente-agences-api:latest
+docker images
