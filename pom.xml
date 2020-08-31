@@ -13,7 +13,7 @@
         
     <groupId>com.adriens.github.opt.tempsattente</groupId>
     <artifactId>tempsattente-api</artifactId>
-    <version>1.2</version>
+    <version>1.6-SNAPSHOT</version>
     <packaging>jar</packaging>
     
     <name>opt-temps-attente-agences-api</name>
@@ -23,8 +23,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <opt-temps-attente-agences-sdk.version>1.7</opt-temps-attente-agences-sdk.version>
+        <opt-temps-attente-agences-sdk.version>1.8</opt-temps-attente-agences-sdk.version>
         <logback.version>1.2.3</logback.version>
+        <springdoc-openapi.version>1.2.32</springdoc-openapi.version>
+        <opencsv.version>5.0</opencsv.version>
     </properties>
     
     <repositories>
@@ -44,6 +46,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc-openapi.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>${opencsv.version}</version>
         </dependency>
 
         <!-- SCOPE RUNTIME -->
@@ -78,12 +92,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
         </dependency>
         <!-- -->
         
@@ -94,6 +110,27 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:8u171-alpine</image>
+                        <!--          <credHelper></credHelper> -->
+                    </from>
+                    <to>
+                        <image>registry.hub.docker.com/rastadidi/opt-temps-attente-agences-api</image>
+                        <!--          <credHelper></credHelper> -->
+                    </to>
+                    <container>
+                        <jvmFlags>
+                            <jvmFlag>-Xms512m</jvmFlag>
+                            <jvmFlag>-Xmx512m</jvmFlag>
+                        </jvmFlags>
+                    </container>
+                </configuration>
             </plugin>
         </plugins>
     </build>
