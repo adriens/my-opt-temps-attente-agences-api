@@ -71,3 +71,11 @@ Then build/push to DockerHub :
 ```
 docker pull rastadidi/opt-temps-attente-agences-api:latest
 docker images
+docker run -d -p 8081:8081 rastadidi/opt-temps-attente-agences-api:latest
+docker ps
+
+# Pour essayer l'API
+sudo apt-get install httpie jq -y
+http http://127.0.0.1:8081/temps-attente/agence/4161
+http http://127.0.0.1:8081/temps-attente/agence/4161 | jq '.idAgence'
+```
