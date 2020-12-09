@@ -67,7 +67,7 @@ public class TempsAttenteControllerTest {
         
         ArrayList<Agence> listeAgence = mapper.readValue(result.getResponse().getContentAsString(), new TypeReference<ArrayList<Agence>>(){});
         
-        assertEquals(63, listeAgence.size());
+        assertEquals(65, listeAgence.size());
     }
     
     @Test
@@ -113,7 +113,7 @@ public class TempsAttenteControllerTest {
         
         ArrayList<String> listeCommunes = mapper.readValue(result.getResponse().getContentAsString(), new TypeReference<ArrayList<String>>(){});
         
-        assertEquals(33, listeCommunes.size());
+        assertEquals(34, listeCommunes.size());
     }
 
     @Test
