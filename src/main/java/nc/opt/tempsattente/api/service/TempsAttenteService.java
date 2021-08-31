@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.adriens.tempsattente.api.service;
+package nc.opt.tempsattente.api.service;
 
 import java.io.IOException;
 import java.io.PrintWriter;

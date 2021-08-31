@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.adriens.tempsattente.api.controller;
+package nc.opt.tempsattente.api.controller;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -11,10 +11,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
-
-import com.adriens.tempsattente.api.service.TempsAttenteService;
-import com.adriens.tempsattente.exception.AgenceNotFoundException;
-import com.adriens.tempsattente.exception.CommuneNotFoundException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
 import nc.opt.tempsattente.Agence;
+import nc.opt.tempsattente.api.service.TempsAttenteService;
+import nc.opt.tempsattente.exception.AgenceNotFoundException;
+import nc.opt.tempsattente.exception.CommuneNotFoundException;
 
 /**
  *
