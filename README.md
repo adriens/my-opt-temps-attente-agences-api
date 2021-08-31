@@ -29,6 +29,7 @@ mvn spring-boot:run
 <code><b>/csv</b></code> <i>Accès au téléchargement de la liste des agences au format CSV</i>
 <code><b>/communes</b></code> <i>Accès à la liste des communes</i>
 <code><b>/temps-attente/agences</b></code> <i>Accès à la liste des agences</i>
+<code><b>/temps-attente/agences?lon=166.4260482788086&lat=-22.25097078275085&distanceInMeters=3000</b> <i>Accès à la liste des communes par distance</i>
 <code><b>/temps-attente/agences/noumea</b></code> <i>Accès à la liste des agences de Nouméa</i>
 <code><b>/temps-attente/agence/4314</b></code> <i>Accès à l'agence correspondant à l'id 4314</i>
 </pre>
