@@ -42,6 +42,10 @@ public class TempsAttenteService {
         return Agences.getAgences(Agences.getCommune(communeName));
     }
     
+    public List<Agence> getAgencesByDistance(double lon, double lat, long distanceInMeters) throws IOException {
+        return Agences.getAgencesByDistance(lon, lat, distanceInMeters);
+    }
+    
     public void downloadCsv(PrintWriter writer) throws IOException {
         writer.write("id, designation, realMaxWaitingTime, coordonneeX, coordonneeY, coordonneeXPrecise, coordonneeYPrecise, commmune \n");
 

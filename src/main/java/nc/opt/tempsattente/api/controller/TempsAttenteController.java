@@ -24,6 +24,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import nc.opt.tempsattente.Agence;
 import nc.opt.tempsattente.api.service.TempsAttenteService;
 import nc.opt.tempsattente.exception.AgenceNotFoundException;
+import nc.opt.tempsattente.exception.BadRequestException;
 import nc.opt.tempsattente.exception.CommuneNotFoundException;
 
 /**
@@ -37,7 +38,7 @@ public class TempsAttenteController {
     private TempsAttenteService tempsAttenteService;
 
     private final Logger log = LoggerFactory.getLogger(TempsAttenteController.class);
-    
+
     @GetMapping("/")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public RedirectView redirect() throws Exception {
@@ -45,12 +46,19 @@ public class TempsAttenteController {
         redirectView.setUrl("/doc.tempsattente.html");
         return redirectView;
     }
-    
+
     @GetMapping("/temps-attente/agences")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public List<Agence> getAgences() throws IOException {
+    public List<Agence> getAgencesByDistance(Double lon, Double lat, Long distanceInMeters) throws IOException {
         try {
-            return tempsAttenteService.getAgences();
+            if (lon != null || lat != null || distanceInMeters != null) {
+                if (lon == null || lat == null || distanceInMeters == null) {
+                    throw new BadRequestException("To lookup by position : lon, lat and distanceInMeters are required");
+                }
+                return tempsAttenteService.getAgencesByDistance(lon, lat, distanceInMeters);
+            } else {
+                return tempsAttenteService.getAgences();
+            }
         } catch (Exception ex) {
             log.error("Impossible de récupérer les détails des agences");
             throw ex;
@@ -60,9 +68,9 @@ public class TempsAttenteController {
     @GetMapping("/temps-attente/agences/{communeName}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public List<Agence> getAgences(@PathVariable String communeName) throws IOException {
-        if(tempsAttenteService.getAgences(communeName).isEmpty()) {
-            throw new CommuneNotFoundException("la commune <" +communeName+ "> n'existe pas.\n");
-        } else { 
+        if (tempsAttenteService.getAgences(communeName).isEmpty()) {
+            throw new CommuneNotFoundException("la commune <" + communeName + "> n'existe pas.\n");
+        } else {
             return tempsAttenteService.getAgences(communeName);
         }
     }
@@ -81,9 +89,9 @@ public class TempsAttenteController {
     @GetMapping("/temps-attente/agence/{idAgence}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public Agence getAgence(@PathVariable int idAgence) throws IOException {
-        if(tempsAttenteService.getAgence(idAgence) == null) {
-            throw new AgenceNotFoundException("l'ID d'agence <" +idAgence+ "> n'existe pas.\n");
-        } else { 
+        if (tempsAttenteService.getAgence(idAgence) == null) {
+            throw new AgenceNotFoundException("l'ID d'agence <" + idAgence + "> n'existe pas.\n");
+        } else {
             return tempsAttenteService.getAgence(idAgence);
         }
     }
