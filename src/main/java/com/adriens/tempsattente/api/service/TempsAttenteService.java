@@ -5,14 +5,16 @@
  */
 package com.adriens.tempsattente.api.service;
 
-import com.github.adriens.opt.tempsattente.sdk.Agence;
-import com.github.adriens.opt.tempsattente.sdk.Agences;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import nc.opt.tempsattente.Agence;
+import nc.opt.tempsattente.Agences;
 
 /**
  *
@@ -24,11 +26,11 @@ public class TempsAttenteService {
     
     private final Logger log = LoggerFactory.getLogger(TempsAttenteService.class);
     
-    public ArrayList<Agence> getAgences() throws IOException { 
+    public List<Agence> getAgences() throws IOException { 
         return Agences.getAgences();
     }
     
-    public ArrayList<String> getCommunesNames() {
+    public List<String> getCommunesNames() {
         return Agences.getCommunesNames();
     }
    
@@ -36,7 +38,7 @@ public class TempsAttenteService {
            return Agence.getAgence(idAgence);
     }
     
-    public ArrayList<Agence> getAgences(String communeName) throws IOException {
+    public List<Agence> getAgences(String communeName) throws IOException {
         return Agences.getAgences(Agences.getCommune(communeName));
     }
     
@@ -45,7 +47,7 @@ public class TempsAttenteService {
 
         for (String communeName : Agences.getCommunesNames()) {
             Agences.Commune commune = Agences.getCommune(communeName);
-            ArrayList<Agence> agences = Agences.getAgences(commune);
+            List<Agence> agences = Agences.getAgences(commune);
             for (Agence agence : agences) {
                 writer.write(
                         agence.getIdAgence() + "," +

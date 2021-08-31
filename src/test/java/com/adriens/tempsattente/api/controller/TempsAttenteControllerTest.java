@@ -5,12 +5,17 @@
  */
 package com.adriens.tempsattente.api.controller;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.ArrayList;
+
 import com.adriens.tempsattente.api.service.TempsAttenteService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.adriens.opt.tempsattente.sdk.Agence;
-import java.util.ArrayList;
-import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +26,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import nc.opt.tempsattente.Agence;
 
 /**
  *
@@ -67,7 +72,7 @@ public class TempsAttenteControllerTest {
         
         ArrayList<Agence> listeAgence = mapper.readValue(result.getResponse().getContentAsString(), new TypeReference<ArrayList<Agence>>(){});
         
-        assertEquals(65, listeAgence.size());
+        assertEquals(60, listeAgence.size());
     }
     
     @Test

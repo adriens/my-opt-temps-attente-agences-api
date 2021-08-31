@@ -5,17 +5,17 @@
  */
 package com.adriens.tempsattente.api.controller;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
 import com.adriens.tempsattente.api.service.TempsAttenteService;
 import com.adriens.tempsattente.exception.AgenceNotFoundException;
 import com.adriens.tempsattente.exception.CommuneNotFoundException;
 
-import com.github.adriens.opt.tempsattente.sdk.Agence;
-
-import java.io.IOException;
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
+
+import nc.opt.tempsattente.Agence;
 
 /**
  *
@@ -47,7 +49,7 @@ public class TempsAttenteController {
     
     @GetMapping("/temps-attente/agences")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public ArrayList<Agence> getAgences() throws IOException {
+    public List<Agence> getAgences() throws IOException {
         try {
             return tempsAttenteService.getAgences();
         } catch (Exception ex) {
@@ -58,7 +60,7 @@ public class TempsAttenteController {
 
     @GetMapping("/temps-attente/agences/{communeName}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public ArrayList<Agence> getAgences(@PathVariable String communeName) throws IOException {
+    public List<Agence> getAgences(@PathVariable String communeName) throws IOException {
         if(tempsAttenteService.getAgences(communeName).isEmpty()) {
             throw new CommuneNotFoundException("la commune <" +communeName+ "> n'existe pas.\n");
         } else { 
@@ -68,7 +70,7 @@ public class TempsAttenteController {
 
     @GetMapping("/communes")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    public ArrayList<String> getCommunesNames() {
+    public List<String> getCommunesNames() {
         try {
             return tempsAttenteService.getCommunesNames();
         } catch (Exception ex) {
