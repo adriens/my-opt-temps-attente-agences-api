@@ -10,8 +10,8 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.adriens.github.opt.tempsattente</groupId>
-    <artifactId>tempsattente-api</artifactId>
+    <groupId>com.github.opt-nc</groupId>
+    <artifactId>opt-temps-attente-agences-api</artifactId>
     <version>2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -29,11 +29,11 @@
     </properties>
 
     <repositories>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/opt-nc/opt-temps-attente-agences-sdk</url>
-        </repository>
-    </repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 
     <dependencies>
 
@@ -68,8 +68,8 @@
         <!-- -->
 
         <dependency>
-            <groupId>nc.opt.tempsattente</groupId>
-            <artifactId>tempsattente-sdk</artifactId>
+            <groupId>com.github.opt-nc</groupId>
+            <artifactId>opt-temps-attente-agences-sdk</artifactId>
             <version>${opt-temps-attente-agences-sdk.version}</version>
             <type>jar</type>
         </dependency>
@@ -95,13 +95,13 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
         </dependency>
-        <!-- -->
-
     </dependencies>
 
     <build>
