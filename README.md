@@ -45,7 +45,7 @@ sudo apt-get install httpie jq -y
 http http://127.0.0.1:8081/temps-attente/agence/4161
 http http://127.0.0.1:8081/temps-attente/agence/4161 | jq '.idAgence'
 http http://127.0.0.1:8081/temps-attente/agences # Accès à la liste des agences
-http http://127.0.0.1:8081/temps-attente/agences?lon=166.4260482788086&lat=-22.25097078275085&distanceInMeters=3000 # Accès à la liste des communes par distance
+http 'http://127.0.0.1:8081/temps-attente/agences?lon=166.4260482788086&lat=-22.25097078275085&distanceInMeters=3000' # Accès à la liste des communes par distance
 http http://127.0.0.1:8081/temps-attente/agences/noumea # Accès à la liste des agences de Nouméa
 ```
 
