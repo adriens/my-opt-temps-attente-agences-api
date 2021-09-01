@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
+    - name: Set up JDK 8
       uses: actions/setup-java@v2
       with:
         java-version: 8
@@ -27,3 +27,29 @@ jobs:
       run: mvn -B package
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  docker-hub:
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 8
+        uses: actions/setup-java@v2
+        with:
+          java-version: 8
+          distribution: 'adopt'
+          cache: 'maven'
+
+      - name: Prepare tags
+        id : image_tags
+        run: |
+           if [[ $GITHUB_REF == refs/tags/* ]]; then
+            TAGS="latest,${GITHUB_REF#refs/tags/}"
+           else
+            TAGS="snapshot"
+           fi
+           echo ::set-output name=tags::${TAGS}
+
+      - name: Publish on Docker Hub with jib
+        run: mvn -B -Djib.to.auth.username=${{secrets.OPT_DOCKERHUB_LOGIN}} -Djib.to.auth.password=${{secrets.OPT_DOCKERHUB_PASSWORD}} -Djib.to.tags=${{steps.image_tags.outputs.tags}} compile jib:build
