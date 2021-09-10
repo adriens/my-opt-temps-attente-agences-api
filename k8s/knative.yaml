@@ -1,0 +1,14 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: opt-temps-attente-agences
+spec:
+  template:
+    metadata:
+      # This is the name of our new "Revision," it must follow the convention {service-name}-{revision-name}
+      name: opt-temps-attente-agences-stable
+    spec:
+      containers:
+        - image: optnc/opt-temps-attente-agences-api:stable
+          ports:
+            - containerPort: 8081
