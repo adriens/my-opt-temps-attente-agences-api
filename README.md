@@ -8,11 +8,23 @@
 
 # API REST des temps d'attente en agence OPT.nc
 
-## Ambitions
+## AmbitionsapiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: helloworld-java-spring
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: docker.io/{username}/helloworld-java-spring
+          env:
+            - name: TARGET
+              value: "Spring Boot Sample v1"
 
 Cette API a pour ambition de booster l'Open Innovation et permettre la réalisation d'intégrations efficaces et originales.
 
-## Docker
+## Lancement via Docker
 
 L'api est disponible sur [Dockerhub](https://hub.docker.com/repository/docker/optnc/opt-temps-attente-agences-api)
 
@@ -20,7 +32,43 @@ L'api est disponible sur [Dockerhub](https://hub.docker.com/repository/docker/op
 docker run --rm -p 8081:8081 optnc/opt-temps-attente-agences-api:latest
 ```
 
-## Démarrer le service
+## Lancenment via Knative
+
+Knative permet de faire du Severless, c'est à dire que l'application est lancée au besoin de manière transparente et arrêté par la suite au bout d'un certain temps
+
+### Soit via l'utilitaire [kn](https://knative.dev/docs/getting-started/#install-the-knative-cli) :
+```shell
+kn service create opt-temps-attente-agences \
+--image optnc/opt-temps-attente-agences-api:stable \
+--port 8081 \
+--revision-name=stable
+```
+
+Puis récupérer l'url du service :
+```shell
+kn service describe opt-temps-attente-agences -o url
+```
+Ou directement appeler le service :
+```shell
+http $(kn service describe opt-temps-attente-agences -o url)
+```
+
+### Soit via [kubectl](https://kubernetes.io/docs/tasks/tools/) :
+```shell
+kubectl apply -f k8s/knative.yaml
+```
+
+Puis récupérer l'url du service :
+```shell
+kubectl get ksvc opt-temps-attente-agences --output=custom-columns=NAME:.metadata.name,URL:.status.url
+```
+
+### Suivre la mise à l'echelle automatique
+```shell
+kubectl get pod -l serving.knative.dev service=opt-temps-attente-agences -w
+```
+
+## Démarrer via maven depuis le code source
 
 ```
 mvn spring-boot:run
@@ -38,7 +86,6 @@ GET /temps-attente/agence/{idAgence}
 
 Liste complète sur [Swagger](http://127.0.0.1:8081/doc.tempsattente.html)
 
-
 ## Exemples d'appels
 ```bash
 sudo apt-get install httpie jq -y
@@ -48,7 +95,6 @@ http http://127.0.0.1:8081/temps-attente/agences # Accès à la liste des agence
 http 'http://127.0.0.1:8081/temps-attente/agences?lon=166.4260482788086&lat=-22.25097078275085&distanceInMeters=3000' # Accès à la liste des communes par distance
 http http://127.0.0.1:8081/temps-attente/agences/noumea # Accès à la liste des agences de Nouméa
 ```
-
 ## Marketplace RapidAPI
 
 Cette API est accessible depuis le web et documentée sur [le marketplace RapidAPI](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc).
