@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.github.opt-nc</groupId>
+    <groupId>nc.opt.tempsattente</groupId>
     <artifactId>opt-temps-attente-agences-api</artifactId>
     <version>2.0</version>
     <packaging>jar</packaging>
@@ -30,11 +30,11 @@
 
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/opt-nc/opt-temps-attente-agences-sdk</url>
         </repository>
     </repositories>
-
+      
     <dependencies>
 
         <dependency>
@@ -62,7 +62,7 @@
         <!-- -->
 
         <dependency>
-            <groupId>com.github.opt-nc</groupId>
+            <groupId>nc.opt.tempsattente</groupId>
             <artifactId>opt-temps-attente-agences-sdk</artifactId>
             <version>${opt-temps-attente-agences-sdk.version}</version>
             <type>jar</type>
