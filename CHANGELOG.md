@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.2...v2.0.3) (2021-12-06)
+
+
+### Bug Fixes
+
+* **docker:** Port HTTP en 8080 ([f2bd4f3](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/f2bd4f358a1ddf2d6f9dbdd961009e4a55e3d57c)), closes [#22](https://github.com/opt-nc/opt-temps-attente-agences-api/issues/22)
+
 ## [2.0.2](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.1...v2.0.2) (2021-12-01)
 
 
