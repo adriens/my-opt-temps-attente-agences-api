@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.3...v2.0.4) (2021-12-06)
+
+
+### Bug Fixes
+
+* **docker:** Problème de publication d'image release sur DockerHub ([dd94cb7](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/dd94cb735bcbbd3b6373a28ab34dfcf78aae6e24)), closes [#22](https://github.com/opt-nc/opt-temps-attente-agences-api/issues/22)
+
 ## [2.0.3](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.2...v2.0.3) (2021-12-06)
 
 
