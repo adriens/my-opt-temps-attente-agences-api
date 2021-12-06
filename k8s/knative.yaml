@@ -11,4 +11,4 @@ spec:
       containers:
         - image: optnc/opt-temps-attente-agences-api:stable
           ports:
-            - containerPort: 8081
+            - containerPort: 8080

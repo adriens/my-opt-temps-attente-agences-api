@@ -30,7 +30,7 @@ Cette API a pour ambition de booster l'Open Innovation et permettre la réalisat
 L'api est disponible sur [Dockerhub](https://hub.docker.com/repository/docker/optnc/opt-temps-attente-agences-api)
 
 ```shell
-docker run --rm -p 8081:8081 optnc/opt-temps-attente-agences-api:latest
+docker run --rm -p 8080:8080 optnc/opt-temps-attente-agences-api:latest
 ```
 
 ## Lancenment via Knative
@@ -41,7 +41,7 @@ Knative permet de faire du Severless, c'est à dire que l'application est lancé
 ```shell
 kn service create opt-temps-attente-agences \
 --image optnc/opt-temps-attente-agences-api:stable \
---port 8081 \
+--port 8080 \
 --revision-name=stable
 ```
 
@@ -85,16 +85,16 @@ GET /temps-attente/agences/{communeName}
 GET /temps-attente/agence/{idAgence}
 ```
 
-Liste complète sur [Swagger](http://127.0.0.1:8081/doc.tempsattente.html)
+Liste complète sur [Swagger](http://127.0.0.1:8080/doc.tempsattente.html)
 
 ## Exemples d'appels
 ```bash
 sudo apt-get install httpie jq -y
-http http://127.0.0.1:8081/temps-attente/agence/4161
-http http://127.0.0.1:8081/temps-attente/agence/4161 | jq '.idAgence'
-http http://127.0.0.1:8081/temps-attente/agences # Accès à la liste des agences
-http 'http://127.0.0.1:8081/temps-attente/agences?lon=166.4260482788086&lat=-22.25097078275085&distanceInMeters=3000' # Accès à la liste des communes par distance
-http http://127.0.0.1:8081/temps-attente/agences/noumea # Accès à la liste des agences de Nouméa
+http http://127.0.0.1:8080/temps-attente/agence/4161
+http http://127.0.0.1:8080/temps-attente/agence/4161 | jq '.idAgence'
+http http://127.0.0.1:8080/temps-attente/agences # Accès à la liste des agences
+http 'http://127.0.0.1:8080/temps-attente/agences?lon=166.4260482788086&lat=-22.25097078275085&distanceInMeters=3000' # Accès à la liste des communes par distance
+http http://127.0.0.1:8080/temps-attente/agences/noumea # Accès à la liste des agences de Nouméa
 ```
 ## Marketplace RapidAPI
 
