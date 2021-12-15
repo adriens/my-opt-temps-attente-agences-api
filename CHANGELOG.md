@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.5...v2.0.6) (2021-12-15)
+
+
+### Bug Fixes
+
+* **deps:** bump springdoc-openapi-ui from 1.5.13 to 1.6.1 ([43621b2](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/43621b2af69eb7813623861d010e4ec3d871e0ba))
+
 ## [2.0.5](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.4...v2.0.5) (2021-12-15)
 
 
