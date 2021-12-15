@@ -98,7 +98,7 @@ http http://127.0.0.1:8080/temps-attente/agences/noumea # Accès à la liste des
 ```
 ## Marketplace RapidAPI
 
-Cette API est accessible depuis le web et documentée sur [le marketplace RapidAPI](https://rapidapi.com/adriens/api/temps-d-attente-agences-opt-nc).
+Cette API est accessible depuis le web et documentée sur [le marketplace RapidAPI](https://rapidapi.com/opt-nc-opt-nc-default/api/temps-attente-en-agence).
 Des exemples de codes fonctionnels y sont fournis pour tous les languages.
 
 ## Exemples de réalisations
