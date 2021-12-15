@@ -30,7 +30,7 @@ Cette API a pour ambition de booster l'Open Innovation et permettre la réalisat
 L'api est disponible sur [Dockerhub](https://hub.docker.com/repository/docker/optnc/opt-temps-attente-agences-api)
 
 ```shell
-docker run --rm -p 8080:8080 optnc/opt-temps-attente-agences-api:latest
+docker run -d --rm -p 8080:8080 optnc/opt-temps-attente-agences-api:latest
 ```
 
 ## Lancenment via Knative
