@@ -27,11 +27,11 @@
         <logback.version>1.2.8</logback.version>
         <springdoc-openapi.version>1.6.1</springdoc-openapi.version>
     </properties>
-
+        
     <repositories>
         <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/opt-nc/opt-temps-attente-agences-sdk</url>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
       
@@ -62,7 +62,7 @@
         <!-- -->
 
         <dependency>
-            <groupId>nc.opt.tempsattente</groupId>
+            <groupId>com.github.opt-nc</groupId>
             <artifactId>opt-temps-attente-agences-sdk</artifactId>
             <version>${opt-temps-attente-agences-sdk.version}</version>
             <type>jar</type>
