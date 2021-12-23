@@ -24,7 +24,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <opt-temps-attente-agences-sdk.version>2.0.1</opt-temps-attente-agences-sdk.version>
-        <logback.version>1.2.9</logback.version>
+        <logback.version>1.2.10</logback.version>
         <springdoc-openapi.version>1.6.1</springdoc-openapi.version>
     </properties>
         
