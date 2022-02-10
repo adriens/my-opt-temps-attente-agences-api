@@ -1,3 +1,11 @@
+## [2.0.8](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.7...v2.0.8) (2021-12-22)
+
+
+### Bug Fixes
+
+* **deps:** bump logback.version from 1.2.8 to 1.2.9 ([9c4fccf](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/9c4fccf8d78792ec78f7c09f0d95c9953be3842d))
+* **deps:** bump spring-boot-starter-parent from 2.6.1 to 2.6.2 ([7a37182](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/7a3718286253776623cdc789c14954c2e119f467))
+
 ## [2.0.7](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.6...v2.0.7) (2021-12-16)
 
 
