@@ -1,3 +1,13 @@
+## [2.0.9](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.8...v2.0.9) (2022-02-10)
+
+
+### Bug Fixes
+
+* **deps:** bump jib-maven-plugin from 3.1.4 to 3.2.0 ([71d59d7](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/71d59d7dd3534c5b59b3ab2648269a923804f867))
+* **deps:** bump logback.version from 1.2.9 to 1.2.10 ([4005c15](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/4005c158efca96acd7cd9c228cebcf14930ca4d2))
+* **deps:** bump spring-boot-starter-parent from 2.6.2 to 2.6.3 ([95413b3](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/95413b3beb03a0f9966fc72b827cd722e5af620c))
+* **deps:** bump springdoc-openapi-ui from 1.6.1 to 1.6.2 ([8a06304](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/8a06304910fe26b89590af991ca49e4a5715fb5d))
+
 ## [2.0.8](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.7...v2.0.8) (2021-12-22)
 
 
