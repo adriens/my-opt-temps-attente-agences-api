@@ -1,3 +1,10 @@
+## [2.0.11](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.10...v2.0.11) (2022-03-02)
+
+
+### Bug Fixes
+
+* **deps:** bump spring-boot-starter-parent from 2.6.3 to 2.6.4 ([80033e9](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/80033e9a0ffab5f59132cb0eb51bd6649121d56f))
+
 ## [2.0.10](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.9...v2.0.10) (2022-03-02)
 
 
