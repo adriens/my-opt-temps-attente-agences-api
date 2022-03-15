@@ -1,3 +1,17 @@
+## [2.0.11](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.10...v2.0.11) (2022-03-02)
+
+
+### Bug Fixes
+
+* **deps:** bump spring-boot-starter-parent from 2.6.3 to 2.6.4 ([80033e9](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/80033e9a0ffab5f59132cb0eb51bd6649121d56f))
+
+## [2.0.10](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.9...v2.0.10) (2022-03-02)
+
+
+### Bug Fixes
+
+* **deps:** bump springdoc-openapi-ui from 1.6.2 to 1.6.6 ([f8ad94c](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/f8ad94c975a7de23c547fd301c9b744b27d8e0cf))
+
 ## [2.0.9](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.8...v2.0.9) (2022-02-10)
 
 
