@@ -5,6 +5,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    target-branch: develop
 
   # Maintain dependencies for java
   - package-ecosystem: "maven"
@@ -15,3 +16,4 @@ updates:
       prefix: fix
       prefix-development: chore
       include: scope
+    target-branch: develop
