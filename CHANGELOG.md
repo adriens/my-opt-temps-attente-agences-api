@@ -1,3 +1,10 @@
+## [2.0.13](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.12...v2.0.13) (2022-03-15)
+
+
+### Bug Fixes
+
+* **deps:** bump logback.version from 1.2.10 to 1.2.11 ([e679632](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/e6796324f7e2471bd6163c7c968eafe8e72145d3))
+
 ## [2.0.12](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.11...v2.0.12) (2022-03-15)
 
 
