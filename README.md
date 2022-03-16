@@ -15,7 +15,7 @@ Tutoriels Katacoda :
  - [Lancement via Docker avec test de l'API](https://www.katacoda.com/opt-labs/courses/opt-temps-attente-agences/basique)
  - [Lancement via Knative](https://www.katacoda.com/opt-labs/courses/opt-temps-attente-agences/Kknative)
 
-L'api est disponible sur [Dockerhub](https://hub.docker.com/repository/docker/optnc/opt-temps-attente-agences-api)
+L'image est disponible sur [Dockerhub](https://hub.docker.com/repository/docker/optnc/opt-temps-attente-agences-api)
 
 ```shell
 docker run -d --rm -p 8080:8080 optnc/opt-temps-attente-agences-api:latest
