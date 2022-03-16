@@ -58,10 +58,37 @@ jobs:
         run: |
            VERSION=$(git describe --tags --exact-match 2>/dev/null || true)
            if [[ $VERSION ]]; then
-            echo ::set-output name=tags::"latest,stable,${VERSION##v}"
-           else
-            echo ::set-output name=tags::"latest"
+             echo ::set-output name=tags::"optnc/opt-temps-attente-agences-api:${VERSION##v},optnc/opt-temps-attente-agences-api:stable"
+             echo ::set-output name=tags_jvm::"optnc/opt-temps-attente-agences-api:${VERSION##v}-jvm,optnc/opt-temps-attente-agences-api:stable-jvm"
            fi
 
-      - name: Publish on Docker Hub with jib
-        run: mvn -B -Djib.to.auth.username=${{secrets.OPT_DOCKERHUB_LOGIN}} -Djib.to.auth.password=${{secrets.OPT_DOCKERHUB_PASSWORD}} -Djib.to.tags=${{steps.image_tags.outputs.tags}} compile jib:build
+      - name: Build regular Docker Image (with JVM, non-native)
+        run: |
+            mvn -B spring-boot:build-image -DskipTests \
+              -Dspring-boot.build-image.imageName=optnc/opt-temps-attente-agences-api:latest-jvm \
+              -Dspring-boot.build-image.tags=${{ steps.image_tags.outputs.tags_jvm }}
+        env:
+          MAVEN_OPTS: "-Xmx128m"
+
+      - name: Build Docker Spring Native Image
+        run: |
+            mvn -B spring-boot:build-image -Pspring-native -Pbuild-docker-image  -DskipTests \
+              -Dspring-boot.build-image.imageName=optnc/opt-temps-attente-agences-api:latest \
+              -Dspring-boot.build-image.tags=${{ steps.image_tags.outputs.tags }}
+        env:
+          MAVEN_OPTS: "-Xmx128m"
+
+      # Login against a Docker registry except on PR
+      - name: Log into registry docker hub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.OPT_DOCKERHUB_LOGIN }}
+          password: ${{ secrets.OPT_DOCKERHUB_PASSWORD }}
+
+      - name: List all images
+        run: docker images -a
+
+      - name: Push docker image to Docker Hub
+        run: docker push --all-tags optnc/opt-temps-attente-agences-api
+
