@@ -9,80 +9,16 @@
 
 # API REST des temps d'attente en agence OPT.nc
 
-## AmbitionsapiVersion: serving.knative.dev/v1
-kind: Service
-metadata:
-  name: helloworld-java-spring
-  namespace: default
-spec:
-  template:
-    spec:
-      containers:
-        - image: docker.io/{username}/helloworld-java-spring
-          env:
-            - name: TARGET
-              value: "Spring Boot Sample v1"
-
 Cette API a pour ambition de booster l'Open Innovation et permettre la réalisation d'intégrations efficaces et originales.
 
-## Lancement via Docker
+Tutoriels Katacoda :
+ - [Lancement via Docker avec test de l'API](https://www.katacoda.com/opt-labs/courses/opt-temps-attente-agences/basique)
+ - [Lancement via Knative](https://www.katacoda.com/opt-labs/courses/opt-temps-attente-agences/Kknative)
 
 L'api est disponible sur [Dockerhub](https://hub.docker.com/repository/docker/optnc/opt-temps-attente-agences-api)
 
 ```shell
 docker run -d --rm -p 8080:8080 optnc/opt-temps-attente-agences-api:latest
-```
-
-## Lancenment via Knative
-
-Knative permet de faire du Severless, c'est à dire que l'application est lancée au besoin de manière transparente et arrêté par la suite au bout d'un certain temps
-
-### Soit via l'utilitaire [kn](https://knative.dev/docs/getting-started/#install-the-knative-cli) :
-```shell
-kn service create opt-temps-attente-agences \
---image optnc/opt-temps-attente-agences-api:stable \
---port 8080 \
---revision-name=stable
-```
-
-Puis récupérer l'url du service :
-```shell
-kn service describe opt-temps-attente-agences -o url
-```
-Ou directement appeler le service :
-```shell
-http $(kn service describe opt-temps-attente-agences -o url)
-```
-
-### Soit via [kubectl](https://kubernetes.io/docs/tasks/tools/) :
-```shell
-kubectl apply -f k8s/knative.yaml
-```
-
-Puis récupérer l'url du service :
-```shell
-kubectl get ksvc opt-temps-attente-agences --output=custom-columns=NAME:.metadata.name,URL:.status.url
-```
-
-### Suivre la mise à l'echelle automatique
-```shell
-kubectl get pod -l serving.knative.dev service=opt-temps-attente-agences -w
-```
-
-## Démarrer via maven depuis le code source
-
-```
-mvn spring-boot:run
-```
-
-## Endpoints
-
-```
-GET /csv
-GET /communes
-GET /temps-attente/agences
-GET /temps-attente/agences/{communeName}
-GET /temps-attente/agence/{idAgence}
 ```
 
 Liste complète sur [Swagger](http://127.0.0.1:8080/doc.tempsattente.html)
