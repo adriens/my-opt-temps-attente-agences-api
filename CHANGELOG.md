@@ -1,3 +1,10 @@
+## [2.0.14](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.13...v2.0.14) (2022-03-17)
+
+
+### Bug Fixes
+
+* **deps:** bump spring-native.version from 0.11.2 to 0.11.3 ([8c5f122](https://github.com/opt-nc/opt-temps-attente-agences-api/commit/8c5f122bd7046bc3cc50673e9bcfeab45a12bc05))
+
 ## [2.0.13](https://github.com/opt-nc/opt-temps-attente-agences-api/compare/v2.0.12...v2.0.13) (2022-03-15)
 
 
