@@ -29,7 +29,10 @@ sudo apt-get install httpie jq -y
 http :8080/temps-attente/agence/4161
 http :8080/temps-attente/agence/4161 | jq '.idAgence'
 http :8080/temps-attente/agences # Accès à la liste des agences
-http 'http://127.0.0.1:8080/temps-attente/agences?lon=166.4260482788086&lat=-22.25097078275085&distanceInMeters=3000' # Accès à la liste des communes par distance
+http GET :8080/temps-attente/agences \
+    lon=166.4260482788086 \
+    lat=-22.25097078275085 \
+    distanceInMeters=3000 # Accès à la liste des communes par distance
 http :8080/temps-attente/agences/noumea # Accès à la liste des agences de Nouméa
 ```
 ## Marketplace RapidAPI
