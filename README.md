@@ -39,6 +39,10 @@ http :8080/temps-attente/agences/noumea # Accès à la liste des agences de Noum
 ```
 ## Marketplace RapidAPI
 
+<a href="https://rapidapi.com/opt-nc-opt-nc-default/api/temps-attente-en-agence" target="_blank">
+    <img src="https://storage.googleapis.com/rapidapi-documentation/connect-on-rapidapi-dark.png" width="215" alt="Connect on RapidAPI">
+</a>
+
 Cette API est accessible depuis le web et documentée sur [le marketplace RapidAPI](https://rapidapi.com/opt-nc-opt-nc-default/api/temps-attente-en-agence).
 Des exemples de codes fonctionnels y sont fournis pour tous les languages.
 
