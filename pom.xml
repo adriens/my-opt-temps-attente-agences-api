@@ -24,7 +24,7 @@
         <java.version>17</java.version>
         <opt-temps-attente-agences-sdk.version>2.0.2</opt-temps-attente-agences-sdk.version>
         <logback.version>1.2.11</logback.version>
-        <springdoc-openapi.version>1.6.7</springdoc-openapi.version>
+        <springdoc-openapi.version>1.6.8</springdoc-openapi.version>
         <spring-native.version>0.11.4</spring-native.version>
     </properties>
 
