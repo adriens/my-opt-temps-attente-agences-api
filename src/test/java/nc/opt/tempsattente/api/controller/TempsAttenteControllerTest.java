@@ -71,7 +71,7 @@ public class TempsAttenteControllerTest {
             new TypeReference<ArrayList<Agence>>() {
             });
 
-        assertEquals(60, listeAgence.size());
+        assertEquals(64, listeAgence.size());
     }
 
     @Test
