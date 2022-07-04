@@ -1,0 +1,26 @@
+[
+  {
+    "name": "org.springframework.boot.info.JavaInfo",
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.boot.info.JavaInfo$JavaVendorInfo",
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.boot.info.JavaInfo$JavaRuntimeEnvironmentInfo",
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true
+  },
+  {
+    "name": "org.springframework.boot.info.JavaInfo$JavaVirtualMachineInfo",
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true,
+    "allDeclaredConstructors": true
+  }
+]

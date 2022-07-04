@@ -1,0 +1,14 @@
+springdoc.swagger-ui.path: doc.tempsattente.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
+        
+  info:
+    git:
+      mode: full
+    
+    java:
+      enabled: true
