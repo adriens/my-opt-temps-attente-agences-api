@@ -1,7 +1,7 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 ![Build](https://github.com/opt-nc/opt-temps-attente-agences-api/actions/workflows/maven.yml/badge.svg)
 [![](https://jitpack.io/v/opt-nc/opt-temps-attente-agences-api.svg)](https://jitpack.io/#opt-nc/opt-temps-attente-agences-api)
-[![Docker Image](https://img.shields.io/badge/docker-homepage-blue)](https://hub.docker.com/repository/docker/optnc/opt-temps-attente-agences-api)
+[![Docker Image](https://img.shields.io/badge/docker-homepage-blue)](https://hub.docker.com/r/optnc/opt-temps-attente-agences-api)
 ![Docker Pulls](https://img.shields.io/docker/pulls/optnc/opt-temps-attente-agences-api)
 ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/optnc/opt-temps-attente-agences-api)
 ![Docker Stars](https://img.shields.io/docker/stars/optnc/opt-temps-attente-agences-api)
