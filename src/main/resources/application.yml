@@ -1,4 +1,5 @@
 springdoc.swagger-ui.path: doc.tempsattente.html
+server.forward-headers-strategy: native # pour que ce 💩 de Springdoc fonctionne jusqu'au bout en reverse proxy, sinon le protocol passe pas
 
 management:
   endpoints:
